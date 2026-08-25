@@ -57,8 +57,8 @@ export default function Home() {
           <div className="flex gap-3">
             <MapPin className="mt-0.5 shrink-0 text-[#146c43]" aria-hidden="true" size={24} />
             <div>
-              <h2 className="text-lg font-bold">청주시부터 시작</h2>
-              <p className="mt-1 text-base text-[#4e6159]">다른 지역도 차례로 늘려 갑니다.</p>
+              <h2 className="text-lg font-bold">누구나 사용 가능</h2>
+              <p className="mt-1 text-base text-[#4e6159]">어려운 공지 글을 짧게 정리해 봅니다.</p>
             </div>
           </div>
         </section>
