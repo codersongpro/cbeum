@@ -18,4 +18,8 @@ describe("화면 고정 문구", () => {
     expect(getCopy("ja", true).start).toBe("お知らせを貼り付ける");
     expect(getCopy("ru", true).start).toBe("Вставить объявление");
   });
+
+  it("어린이용 화면은 더 쉬운 시작 문구를 제공한다", () => {
+    expect(getCopy("ko", true, true).start).toBe("공지 글 같이 보기");
+  });
 });

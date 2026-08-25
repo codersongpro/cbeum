@@ -37,6 +37,21 @@ const KOREAN_STANDARD: HomeCopy = {
   secondStepDescription: "정리된 날짜, 전화 문의, 해야 할 일을 확인합니다.",
 };
 
+const KOREAN_CHILD: HomeCopy = {
+  settings: "글자와 언어",
+  eyebrow: "공지 글 같이 보기",
+  titleFirst: "공지 글에서",
+  titleSecond: "중요한 것 찾기",
+  description: "글을 넣으면 날짜, 전화번호, 할 일을 알려 줘요.",
+  start: "공지 글 같이 보기",
+  firstStepTitle: "1. 글 넣기",
+  firstStepDescription: "공지 글을 복사해서 넣어요.",
+  secondStepTitle: "2. 중요한 것 보기",
+  secondStepDescription: "언제까지, 누구에게 전화할지 봐요.",
+  thirdStepTitle: "천천히 같이 보기",
+  thirdStepDescription: "모르는 말은 어른과 함께 확인해요.",
+};
+
 const ENGLISH: HomeCopy = {
   settings: "Text and language",
   eyebrow: "Notice helper",
@@ -130,7 +145,9 @@ const RUSSIAN: HomeCopy = {
 export function getCopy(
   language: AccessibilitySettings["language"],
   simpleLanguage = true,
+  childMode = false,
 ): HomeCopy {
+  if (language === "ko" && childMode) return KOREAN_CHILD;
   if (language === "en") return ENGLISH;
   if (language === "zh-CN") return CHINESE_SIMPLIFIED;
   if (language === "vi") return VIETNAMESE;

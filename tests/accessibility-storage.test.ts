@@ -15,12 +15,14 @@ describe("접근성 설정 저장", () => {
       textSize: "large",
       simpleLanguage: true,
       language: "en",
+      childMode: false,
     });
 
     expect(loadAccessibilitySettings()).toEqual({
       textSize: "large",
       simpleLanguage: true,
       language: "en",
+      childMode: false,
     });
   });
 
@@ -35,8 +37,23 @@ describe("접근성 설정 저장", () => {
       textSize: "default",
       simpleLanguage: true,
       language: "vi",
+      childMode: false,
     });
 
     expect(loadAccessibilitySettings().language).toBe("vi");
+  });
+
+  it("아주 큰 글자와 어린이용 화면 설정을 저장한다", () => {
+    saveAccessibilitySettings({
+      textSize: "extraLarge",
+      simpleLanguage: true,
+      language: "ko",
+      childMode: true,
+    });
+
+    expect(loadAccessibilitySettings()).toMatchObject({
+      textSize: "extraLarge",
+      childMode: true,
+    });
   });
 });

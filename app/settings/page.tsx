@@ -53,7 +53,7 @@ export default function SettingsPage() {
         <form className="mt-8 space-y-9" onSubmit={(event) => { event.preventDefault(); saveSettings(); }}>
           <fieldset>
             <legend className="text-xl font-bold">글자 크기</legend>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            <div className="mt-4 grid gap-3 sm:grid-cols-3">
               <label className="flex min-h-16 cursor-pointer items-center gap-3 rounded-lg border-2 border-[#8aa096] bg-white px-4 text-lg font-bold has-[:checked]:border-[#146c43] has-[:checked]:bg-[#edf7f0]">
                 <input
                   type="radio"
@@ -72,6 +72,15 @@ export default function SettingsPage() {
                 />
                 큰 글자
               </label>
+              <label className="flex min-h-16 cursor-pointer items-center gap-3 rounded-lg border-2 border-[#8aa096] bg-white px-4 text-2xl font-bold has-[:checked]:border-[#146c43] has-[:checked]:bg-[#edf7f0]">
+                <input
+                  type="radio"
+                  name="text-size"
+                  checked={settings.textSize === "extraLarge"}
+                  onChange={() => updateSettings({ textSize: "extraLarge" })}
+                />
+                아주 큰 글자
+              </label>
             </div>
           </fieldset>
 
@@ -84,6 +93,14 @@ export default function SettingsPage() {
                 onChange={(event) => updateSettings({ simpleLanguage: event.target.checked })}
               />
               쉬운 말로 보기
+            </label>
+            <label className="mt-3 flex min-h-16 cursor-pointer items-center gap-3 rounded-lg border-2 border-[#8aa096] bg-white px-4 text-lg font-bold has-[:checked]:border-[#146c43] has-[:checked]:bg-[#edf7f0]">
+              <input
+                type="checkbox"
+                checked={settings.childMode}
+                onChange={(event) => updateSettings({ childMode: event.target.checked })}
+              />
+              어린이용 화면
             </label>
           </fieldset>
 

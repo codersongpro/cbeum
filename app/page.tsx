@@ -14,7 +14,7 @@ const getServerSnapshot = () => DEFAULT_ACCESSIBILITY_SETTINGS;
 
 export default function Home() {
   const settings = useSyncExternalStore(subscribe, loadAccessibilitySettings, getServerSnapshot);
-  const copy = getCopy(settings.language, settings.simpleLanguage);
+  const copy = getCopy(settings.language, settings.simpleLanguage, settings.childMode);
 
   return (
     <main className="min-h-screen bg-[#f5f8f7] text-[#172420]">

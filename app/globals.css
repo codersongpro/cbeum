@@ -23,6 +23,10 @@ html[data-text-size="large"] {
   font-size: 112.5%;
 }
 
+html[data-text-size="extraLarge"] {
+  font-size: 125%;
+}
+
 body {
   margin: 0;
   background: var(--background);
