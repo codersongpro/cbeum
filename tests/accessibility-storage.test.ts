@@ -29,4 +29,14 @@ describe("접근성 설정 저장", () => {
 
     expect(loadAccessibilitySettings()).toEqual(DEFAULT_ACCESSIBILITY_SETTINGS);
   });
+
+  it("추가한 화면 언어를 저장한다", () => {
+    saveAccessibilitySettings({
+      textSize: "default",
+      simpleLanguage: true,
+      language: "vi",
+    });
+
+    expect(loadAccessibilitySettings().language).toBe("vi");
+  });
 });

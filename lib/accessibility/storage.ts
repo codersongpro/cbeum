@@ -1,7 +1,7 @@
 export type AccessibilitySettings = {
   textSize: "default" | "large";
   simpleLanguage: boolean;
-  language: "ko" | "en";
+  language: "ko" | "en" | "zh-CN" | "vi" | "fil" | "ja" | "ru";
 };
 
 export const DEFAULT_ACCESSIBILITY_SETTINGS: AccessibilitySettings = {
@@ -19,7 +19,13 @@ function isAccessibilitySettings(value: unknown): value is AccessibilitySettings
   return (
     (settings.textSize === "default" || settings.textSize === "large") &&
     typeof settings.simpleLanguage === "boolean" &&
-    (settings.language === "ko" || settings.language === "en")
+    (settings.language === "ko" ||
+      settings.language === "en" ||
+      settings.language === "zh-CN" ||
+      settings.language === "vi" ||
+      settings.language === "fil" ||
+      settings.language === "ja" ||
+      settings.language === "ru")
   );
 }
 

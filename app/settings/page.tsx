@@ -111,6 +111,51 @@ export default function SettingsPage() {
                 />
                 English
               </label>
+              <label className="flex min-h-16 cursor-pointer items-center gap-3 rounded-lg border-2 border-[#8aa096] bg-white px-4 text-lg font-bold has-[:checked]:border-[#146c43] has-[:checked]:bg-[#edf7f0]">
+                <input
+                  type="radio"
+                  name="language"
+                  checked={settings.language === "zh-CN"}
+                  onChange={() => updateSettings({ language: "zh-CN" })}
+                />
+                중국어(간체)
+              </label>
+              <label className="flex min-h-16 cursor-pointer items-center gap-3 rounded-lg border-2 border-[#8aa096] bg-white px-4 text-lg font-bold has-[:checked]:border-[#146c43] has-[:checked]:bg-[#edf7f0]">
+                <input
+                  type="radio"
+                  name="language"
+                  checked={settings.language === "vi"}
+                  onChange={() => updateSettings({ language: "vi" })}
+                />
+                Tiếng Việt
+              </label>
+              <label className="flex min-h-16 cursor-pointer items-center gap-3 rounded-lg border-2 border-[#8aa096] bg-white px-4 text-lg font-bold has-[:checked]:border-[#146c43] has-[:checked]:bg-[#edf7f0]">
+                <input
+                  type="radio"
+                  name="language"
+                  checked={settings.language === "fil"}
+                  onChange={() => updateSettings({ language: "fil" })}
+                />
+                Filipino
+              </label>
+              <label className="flex min-h-16 cursor-pointer items-center gap-3 rounded-lg border-2 border-[#8aa096] bg-white px-4 text-lg font-bold has-[:checked]:border-[#146c43] has-[:checked]:bg-[#edf7f0]">
+                <input
+                  type="radio"
+                  name="language"
+                  checked={settings.language === "ja"}
+                  onChange={() => updateSettings({ language: "ja" })}
+                />
+                日本語
+              </label>
+              <label className="flex min-h-16 cursor-pointer items-center gap-3 rounded-lg border-2 border-[#8aa096] bg-white px-4 text-lg font-bold has-[:checked]:border-[#146c43] has-[:checked]:bg-[#edf7f0]">
+                <input
+                  type="radio"
+                  name="language"
+                  checked={settings.language === "ru"}
+                  onChange={() => updateSettings({ language: "ru" })}
+                />
+                Русский
+              </label>
             </div>
           </fieldset>
 

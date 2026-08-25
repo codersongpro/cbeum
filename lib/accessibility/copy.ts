@@ -52,10 +52,90 @@ const ENGLISH: HomeCopy = {
   thirdStepDescription: "Read long notices in a shorter form.",
 };
 
+const CHINESE_SIMPLIFIED: HomeCopy = {
+  settings: "文字和语言",
+  eyebrow: "公告整理",
+  titleFirst: "查看公告中的",
+  titleSecond: "重要内容",
+  description: "粘贴公告后，可以查看日期、电话号码和要做的事。",
+  start: "粘贴公告",
+  firstStepTitle: "1. 粘贴公告",
+  firstStepDescription: "复制公告并粘贴到这里。",
+  secondStepTitle: "2. 查看重要内容",
+  secondStepDescription: "查看日期、电话号码和要做的事。",
+  thirdStepTitle: "所有人都能使用",
+  thirdStepDescription: "把较长的公告整理得更简短。",
+};
+
+const VIETNAMESE: HomeCopy = {
+  settings: "Cỡ chữ và ngôn ngữ",
+  eyebrow: "Tóm tắt thông báo",
+  titleFirst: "Xem phần quan trọng",
+  titleSecond: "trong thông báo",
+  description: "Dán thông báo để xem ngày, số điện thoại và việc cần làm.",
+  start: "Dán thông báo",
+  firstStepTitle: "1. Dán thông báo",
+  firstStepDescription: "Sao chép thông báo và dán vào đây.",
+  secondStepTitle: "2. Xem thông tin chính",
+  secondStepDescription: "Kiểm tra ngày, số điện thoại và việc cần làm.",
+  thirdStepTitle: "Dành cho mọi người",
+  thirdStepDescription: "Đọc thông báo dài bằng nội dung ngắn hơn.",
+};
+
+const FILIPINO: HomeCopy = {
+  settings: "Teksto at wika",
+  eyebrow: "Buod ng paunawa",
+  titleFirst: "Tingnan ang mahalagang bahagi",
+  titleSecond: "ng paunawa",
+  description: "Idikit ang paunawa para makita ang petsa, numero ng telepono, at gagawin.",
+  start: "Idikit ang paunawa",
+  firstStepTitle: "1. Idikit ang paunawa",
+  firstStepDescription: "Kopyahin ang paunawa at idikit ito rito.",
+  secondStepTitle: "2. Tingnan ang mahalagang impormasyon",
+  secondStepDescription: "Tingnan ang petsa, numero ng telepono, at gagawin.",
+  thirdStepTitle: "Para sa lahat",
+  thirdStepDescription: "Basahin ang mahabang paunawa sa mas maikling anyo.",
+};
+
+const JAPANESE: HomeCopy = {
+  settings: "文字と言語",
+  eyebrow: "お知らせの整理",
+  titleFirst: "お知らせの大切な部分を",
+  titleSecond: "確認しましょう",
+  description: "お知らせを貼り付けると、日付、電話番号、することを確認できます。",
+  start: "お知らせを貼り付ける",
+  firstStepTitle: "1. お知らせを貼り付ける",
+  firstStepDescription: "お知らせをコピーして、ここに貼り付けます。",
+  secondStepTitle: "2. 大切な情報を見る",
+  secondStepDescription: "日付、電話番号、することを確認します。",
+  thirdStepTitle: "だれでも使えます",
+  thirdStepDescription: "長いお知らせを短く整理して読みます。",
+};
+
+const RUSSIAN: HomeCopy = {
+  settings: "Текст и язык",
+  eyebrow: "Кратко об объявлении",
+  titleFirst: "Посмотрите важное",
+  titleSecond: "в объявлении",
+  description: "Вставьте объявление, чтобы увидеть дату, номер телефона и список дел.",
+  start: "Вставить объявление",
+  firstStepTitle: "1. Вставьте объявление",
+  firstStepDescription: "Скопируйте объявление и вставьте его сюда.",
+  secondStepTitle: "2. Посмотрите важную информацию",
+  secondStepDescription: "Проверьте дату, номер телефона и список дел.",
+  thirdStepTitle: "Для всех",
+  thirdStepDescription: "Читайте длинные объявления в короткой форме.",
+};
+
 export function getCopy(
   language: AccessibilitySettings["language"],
   simpleLanguage = true,
 ): HomeCopy {
   if (language === "en") return ENGLISH;
+  if (language === "zh-CN") return CHINESE_SIMPLIFIED;
+  if (language === "vi") return VIETNAMESE;
+  if (language === "fil") return FILIPINO;
+  if (language === "ja") return JAPANESE;
+  if (language === "ru") return RUSSIAN;
   return simpleLanguage ? KOREAN_SIMPLE : KOREAN_STANDARD;
 }
