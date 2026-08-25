@@ -1,0 +1,32 @@
+import { beforeEach, describe, expect, it } from "vitest";
+import {
+  DEFAULT_ACCESSIBILITY_SETTINGS,
+  loadAccessibilitySettings,
+  saveAccessibilitySettings,
+} from "@/lib/accessibility/storage";
+
+describe("접근성 설정 저장", () => {
+  beforeEach(() => {
+    window.localStorage.clear();
+  });
+
+  it("글자 크기, 쉬운 말, 화면 언어를 저장하고 다시 읽는다", () => {
+    saveAccessibilitySettings({
+      textSize: "large",
+      simpleLanguage: true,
+      language: "en",
+    });
+
+    expect(loadAccessibilitySettings()).toEqual({
+      textSize: "large",
+      simpleLanguage: true,
+      language: "en",
+    });
+  });
+
+  it("깨진 저장값은 기본 설정으로 되돌린다", () => {
+    window.localStorage.setItem("cbeum.accessibility.v1", "not-json");
+
+    expect(loadAccessibilitySettings()).toEqual(DEFAULT_ACCESSIBILITY_SETTINGS);
+  });
+});

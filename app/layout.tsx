@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import { AccessibilityLoader } from "@/components/accessibility-loader";
 import "./globals.css";
 
 const geist = Geist({
@@ -8,14 +9,17 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "충북이음 AI | 청주시 생활정보 도우미",
-  description: "청주시 공지문을 쉬운 말과 해야 할 일로 정리해 주는 생활정보 도우미입니다.",
+  title: "충북이음 AI | 공지 글 정리",
+  description: "공지 글에서 날짜, 전화번호, 할 일을 찾아 주는 쉬운 안내 도구입니다.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="ko" className={geist.variable}>
-      <body>{children}</body>
+      <body>
+        <AccessibilityLoader />
+        {children}
+      </body>
     </html>
   );
 }
