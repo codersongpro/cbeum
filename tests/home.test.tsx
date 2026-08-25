@@ -8,7 +8,7 @@ describe("첫 화면", () => {
 
     expect(screen.getByText("충북이음 AI")).toBeInTheDocument();
     expect(
-      screen.getByRole("link", { name: /공지문 읽기/ }),
+      screen.getByRole("link", { name: /공지 글 붙여 넣기/ }),
     ).toHaveAttribute("href", "/analyze");
   });
 });

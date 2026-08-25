@@ -22,7 +22,7 @@ export default function AnalyzePage() {
     const trimmedNotice = notice.trim();
 
     if (!trimmedNotice) {
-      setError("공지문 내용을 입력해 주세요.");
+      setError("공지 글을 붙여 넣어 주세요.");
       return;
     }
 
@@ -49,20 +49,21 @@ export default function AnalyzePage() {
         <section className="mt-10">
           <p className="flex items-center gap-2 text-base font-bold text-[#146c43]">
             <FileText aria-hidden="true" size={22} />
-            청주시 공지문 읽기
+            청주시 공지 글 정리
           </p>
           <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
-            공지문을 붙여 넣어 주세요.
+            공지 글을 여기에 넣으세요
           </h1>
           <p className="mt-4 text-lg leading-8 text-[#4e6159]">
-            날짜, 문의처, 해야 할 일을 찾아 드립니다. 찾지 못한 정보는 추측하지 않고 원문 확인이 필요하다고 알려드립니다.
+            <span className="font-bold text-[#172420]">1.</span> 공지 글을 붙여 넣고
+            <span className="font-bold text-[#172420]"> 2.</span> 중요한 내용을 확인하세요.
           </p>
         </section>
 
         <form className="mt-8" onSubmit={handleSubmit} noValidate>
           <div className="flex items-center justify-between gap-4">
             <label htmlFor="notice" className="text-lg font-bold">
-              공지문 내용
+              공지 글
             </label>
             <span className="text-sm text-[#4e6159]" aria-live="polite">
               {notice.length.toLocaleString()}자
@@ -78,10 +79,10 @@ export default function AnalyzePage() {
             }}
             aria-describedby="notice-help notice-error"
             className="mt-3 min-h-72 w-full resize-y rounded-lg border-2 border-[#8aa096] bg-white p-4 text-lg leading-8 outline-none focus:border-[#146c43] focus:ring-4 focus:ring-[#dff1e7]"
-            placeholder="청주시 공지문 내용을 여기에 붙여 넣으세요."
+            placeholder="공지 글을 복사해서 여기에 붙여 넣으세요."
           />
           <p id="notice-help" className="mt-3 text-base leading-6 text-[#4e6159]">
-            주민등록번호, 계좌번호, 상세 건강정보 같은 개인정보는 입력하지 마세요. 입력한 내용은 이 브라우저 탭에서만 처리됩니다.
+            이름, 주소, 계좌번호, 건강 이야기는 넣지 마세요. 글은 지금 보고 있는 화면에서만 정리합니다.
           </p>
           {error && (
             <p id="notice-error" className="mt-3 text-base font-bold text-[#b42318]" role="alert">
@@ -95,14 +96,14 @@ export default function AnalyzePage() {
               className="inline-flex min-h-14 flex-1 items-center justify-center gap-3 rounded-lg bg-[#146c43] px-6 text-lg font-bold text-white transition-colors hover:bg-[#0e5836] focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#f2b84b]"
             >
               <Search aria-hidden="true" size={22} />
-              핵심 정보 찾기
+              중요한 내용 보기
             </button>
             <button
               type="button"
               onClick={loadExample}
               className="min-h-14 rounded-lg border-2 border-[#146c43] bg-white px-6 text-lg font-bold text-[#146c43] transition-colors hover:bg-[#edf7f0] focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#f2b84b]"
             >
-              청주시 예시 불러오기
+              예시 글 보기
             </button>
           </div>
         </form>

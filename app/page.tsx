@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, FileText, MapPin, Volume2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, FileText, MapPin } from "lucide-react";
 
 export default function Home() {
   return (
@@ -15,32 +15,26 @@ export default function Home() {
         <section className="flex flex-1 flex-col justify-center py-12 sm:py-16">
           <p className="mb-4 flex items-center gap-2 text-base font-semibold text-[#146c43]">
             <MapPin aria-hidden="true" size={20} />
-            청주시 생활정보, 쉽게 확인하세요
+            청주시 공지 글 정리
           </p>
           <h1 className="max-w-3xl text-4xl font-bold leading-tight sm:text-5xl">
-            어렵게 쓰인 공지문을
+            공지 글에서
             <br />
-            내 일처럼 풀어드립니다.
+            중요한 것만 보세요
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-[#4e6159]">
-            사진이나 PDF를 올리면 필요한 일, 마감일, 준비할 것과 문의처를
-            쉬운 말로 정리해 드립니다.
+            공지 글을 붙여 넣으면 언제까지 해야 하는지, 어디에 전화해야 하는지,
+            무엇을 해야 하는지 보여 드립니다.
           </p>
 
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-10 max-w-xl">
             <Link
               href="/analyze"
-              className="inline-flex min-h-14 items-center justify-center gap-3 rounded-lg bg-[#146c43] px-6 text-lg font-bold text-white transition-colors hover:bg-[#0e5836] focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#f2b84b]"
+              className="inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-lg bg-[#146c43] px-6 text-lg font-bold text-white transition-colors hover:bg-[#0e5836] focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#f2b84b] sm:w-auto"
             >
               <FileText aria-hidden="true" size={24} />
-              공지문 읽기
+              공지 글 붙여 넣기
               <ArrowRight aria-hidden="true" size={22} />
-            </Link>
-            <Link
-              href="/onboarding"
-              className="inline-flex min-h-14 items-center justify-center gap-3 rounded-lg border-2 border-[#146c43] bg-white px-6 text-lg font-bold text-[#146c43] transition-colors hover:bg-[#edf7f0] focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#f2b84b]"
-            >
-              내 지역과 글자 설정
             </Link>
           </div>
         </section>
@@ -49,22 +43,22 @@ export default function Home() {
           <div className="flex gap-3">
             <FileText className="mt-0.5 shrink-0 text-[#146c43]" aria-hidden="true" size={24} />
             <div>
-              <h2 className="text-lg font-bold">한눈에 정리</h2>
-              <p className="mt-1 text-base text-[#4e6159]">할 일과 마감일을 먼저 보여드립니다.</p>
+              <h2 className="text-lg font-bold">1. 글 붙여 넣기</h2>
+              <p className="mt-1 text-base text-[#4e6159]">공지 글을 그대로 넣으세요.</p>
             </div>
           </div>
           <div className="flex gap-3">
-            <Volume2 className="mt-0.5 shrink-0 text-[#146c43]" aria-hidden="true" size={24} />
+            <CheckCircle2 className="mt-0.5 shrink-0 text-[#146c43]" aria-hidden="true" size={24} />
             <div>
-              <h2 className="text-lg font-bold">소리로 듣기</h2>
-              <p className="mt-1 text-base text-[#4e6159]">정리된 내용을 천천히 읽어드립니다.</p>
+              <h2 className="text-lg font-bold">2. 중요한 내용 보기</h2>
+              <p className="mt-1 text-base text-[#4e6159]">날짜, 전화번호, 할 일을 봅니다.</p>
             </div>
           </div>
           <div className="flex gap-3">
             <MapPin className="mt-0.5 shrink-0 text-[#146c43]" aria-hidden="true" size={24} />
             <div>
-              <h2 className="text-lg font-bold">청주시부터</h2>
-              <p className="mt-1 text-base text-[#4e6159]">첫 적용 지역은 청주시입니다.</p>
+              <h2 className="text-lg font-bold">청주시부터 시작</h2>
+              <p className="mt-1 text-base text-[#4e6159]">다른 지역도 차례로 늘려 갑니다.</p>
             </div>
           </div>
         </section>

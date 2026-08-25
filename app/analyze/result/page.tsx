@@ -25,17 +25,17 @@ export default function AnalyzeResultPage() {
           className="inline-flex min-h-12 items-center gap-2 text-base font-bold text-[#146c43] focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#f2b84b]"
         >
           <ArrowLeft aria-hidden="true" size={20} />
-          다시 입력하기
+          다른 글 넣기
         </Link>
 
         <div className="mt-10">
           {analysis ? (
             <NoticeResult analysis={analysis} />
           ) : (
-            <section aria-label="분석 결과 없음">
-              <h1 className="text-3xl font-bold">분석할 공지문이 없습니다.</h1>
+            <section aria-label="정리한 글 없음">
+              <h1 className="text-3xl font-bold">아직 넣은 글이 없습니다.</h1>
               <p className="mt-4 text-lg leading-8 text-[#4e6159]">
-                공지문 내용을 입력한 뒤 핵심 정보를 찾아보세요.
+                공지 글을 넣으면 중요한 내용을 볼 수 있습니다.
               </p>
             </section>
           )}
